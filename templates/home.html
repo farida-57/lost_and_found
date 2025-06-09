@@ -1,0 +1,23 @@
+ {% extends ’base.html’ %}
+2 {% block content %}
+3 <h2>Accueil</h2>
+4 {% if ’username’ in session %}
+5 <p>Bienvenue, {{ session[’username’] }} !</p>
+6 {% else %}
+7 <p>Veuillez vous connecter pour déclarer des objets.</p>
+8 {% endif %}
+9 <h3>Objets Perdus</h3>
+10 <ul>
+11 {% for item in lost_items %}
+12 <li>{{ item.description }} (Signalé le {{ item.date.strftime(’%Y-%m-%d’)
+}})</li>
+13 {% endfor %}
+14 </ul>
+15 <h3>Objets Retrouvés</h3>
+16 <ul>
+17 {% for item in found_items %}
+li>{{ item.description }} (Signalé le {{ item.date.strftime(’%Y-%m-%d’)
+}})</li>
+19 {% endfor %}
+20 </ul>
+21 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends ’base.html’ %}
+2 {% block content %}
+3 <h2>Correspondances Potentielles</h2>
+4 <ul>
+5 {% for lost, found, similarity in matches %}
+6 <li>
+7 Objet perdu : {{ lost.description }}<br>
+8 Objet retrouvé : {{ found.description }}<br>
+9 Similarité : {{ (similarity * 100)|round(2) }}%
+10 </li>
+11 {% endfor %}
+12 </ul>
+13 {% endblock %}
