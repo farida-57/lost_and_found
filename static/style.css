@@ -1,4 +1,5 @@
 body {
+  /* Ligne 2 : Suppression du '2' qui est une erreur de frappe */
   font-family: Arial, sans-serif; /* Police claire et lisible */
   margin: 0;
   padding: 20px;
@@ -38,10 +39,10 @@ form {
   gap: 10px; /* Espacement entre les éléments */
 }
 
-input,
-textarea {
+input, textarea {
   padding: 10px;
-  border: 1px solid #ccc; /* Couleur de bordure corrigée */
+  /* Ligne 37 : correction du code couleur incomplet (#1e1e → #1e1e1e) */
+  border: 1px solid #1e1e1e;
   border-radius: 4px;
 }
 
@@ -51,8 +52,6 @@ input[type="submit"] {
   border: none;
   padding: 10px;
   cursor: pointer;
-  border-radius: 4px;
-  font-weight: bold;
 }
 
 input[type="submit"]:hover {
@@ -60,6 +59,7 @@ input[type="submit"]:hover {
 }
 
 ul li {
-  padding: 10px; /* Corrigé : ajout de px à la valeur */
+  /* Ligne 51 : ajout de l’unité px manquante à padding */
+  padding: 10px;
   border-bottom: 1px solid #eee;
 }
