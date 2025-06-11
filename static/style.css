@@ -1,0 +1,52 @@
+ody {
+2 font-family: Arial, sans-serif; /* Police claire et lisible */
+3 margin: 0;
+4 padding: 20px;
+5 background-color: #f9f9f9; /* Fond clair */
+6 }
+7 header {
+8 background-color: #4CAF50; /* Vert pour len-tête */
+9 color: white;
+10 padding: 10px;
+11 text-align: center;
+12 }
+13 nav a {
+14 color: white;
+15 margin: 0 15px;
+16 text-decoration: none;
+17 font-weight: bold;
+18 }
+19 nav a:hover {
+20 text-decoration: underline; /* Effet au survol */
+21 }
+22 main {
+23 max-width: 800px; /* Largeur maximale pour la lisibilité */
+24 margin: 20px auto;
+25 padding: 10px;
+26 background-color: white;
+27 border-radius: 5px;
+28 box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Ombre légère */
+29 }
+30 form {
+31 display: flex;
+32 flex-direction: column;
+33 gap: 10px; /* Espacement entre les éléments */
+34 }
+35 input, textarea {
+36 padding: 10px;
+37 border: 1px solid #1e1e;
+38 border-radius: 4px;
+39 }
+40 input[type="submit"] {
+    ackground-color: #4CAF50;
+42 color: white;
+43 border: none;
+44 padding: 10px;
+45 cursor: pointer;
+46 }
+47 input[type="submit"]:hover {
+48 background-color: #45a049; /* Vert plus foncé au survol */
+49 }
+50 ul li {
+51 padding: 10;
+52 border-bottom: 1px solid #eee;

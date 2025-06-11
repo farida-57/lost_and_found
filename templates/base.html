@@ -1,0 +1,31 @@
+!DOCTYPE html>
+2 <html>
+3 <head>
+4 <title>Outil de Gestion des Objets Perdus</title>
+5 <link rel="stylesheet" href="{{ url_for(’static’, filename=’style.css’) }}">
+6 </head>
+7 <body>
+8 <header>
+9 <h1>Outil de Gestion des Objets Perdus et Retrouvés</h1>
+10 <nav>
+11 <a href="{{ url_for(’home’) }}">Accueil</a>
+12 {% if ’user_id’ in session %}
+13 <a href="{{ url_for(’lost’) }}">Déclarer Perdu</a>
+14 <a href="{{ url_for(’found’) }}">Déclarer Retrouvé</a>
+a href="{{ url_for(’match’) }}">Correspondances</a>
+16 <a href="{{ url_for(’logout’) }}">Déconnexion ({{
+session.get(’username’, ’’) }})</a>
+17 {% else %}
+18 <a href="{{ url_for(’login’) }}">Connexion</a>
+19 <a href="{{ url_for(’register’) }}">Inscription</a>
+20 {% endif %}
+21 </nav>
+22 </header>
+23 <main>
+24 {% if error %}
+25 <p style="color: red;">{{ error }}</p>
+26 {% endif %}
+27 {% block content %}{% endblock %}
+28 </main>
+29 </body>
+30 </html>
