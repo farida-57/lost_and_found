@@ -1,24 +1,31 @@
 # Importation des modules nécessaires
 from flask import Flask, render_template, request, redirect, url_for, session
-from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from difflib import SequenceMatcher
 from datetime import datetime
 import os
+from models import User, LostItem, FoundItem, db
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
  # Création de l’application Flask
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'votre_cle_secrete_ici'
- # Clé secrète pour sécuriser les sessions
-app.config['SQLACHEMY_DATABASE_URI'] = 'sqlite:///instance/database.db'
-     #Chemin de la base de données
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
-      # Désactiver les avertissements inutiles
-db = SQLAlchemy(app) 
-# Initialisation de SQLAlchemy pour gérer la base dedonnées
 
- # Importer les modèles après l’initialisation de db
-from models import User, LostItem, FoundItem
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
+
+ # Clé secrète pour sécuriser les sessions
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+#Chemin de la base de données
+app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(basedir, 'instance', 'database.db')}"
+
+# Désactiver les avertissements inutiles
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
+
+# Initialisation de SQLAlchemy pour gérer la base dedonnées
+db.init_app(app)
 
  # Créer les tables de la base de données
 with app.app_context():
