@@ -1,11 +1,9 @@
-{% extends ’base.html’ %}
-2 {% block content %}
-3 <h2>Inscription</h2>
-4 <form method="POST">
-5 <label>Nom d’utilisateur : <input type="text" name="username"
-required></label><br>
-6 <label>Mot de passe : <input type="password" name="password"
-required></label><br>
-7 <input type="submit" value="S’inscrire">
-8 </form>
-9 {% endblock %}
+{% extends 'base.html' %}
+{% block content %}
+<h2>Inscription</h2>
+<form method="POST">
+  <label>Nom d'utilisateur : <input type="text" name="username" required></label><br>
+  <label>Mot de passe : <input type="password" name="password" required></label><br>
+  <input type="submit" value="S'inscrire">
+</form>
+{% endblock %}
